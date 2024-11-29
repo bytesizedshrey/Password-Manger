@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Password Manager</title>
+
+    <!-- Font and Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Password Quotes Section -->
+    <div id="password-quotes">
+        <h2>Why Strong Passwords Matter</h2>
+        <p id="quote">Your password is the key to your online safety.</p>
+    </div>
+    
+    <!-- Terminal Styled Password Manager -->
+    <div class="terminal">
+        <header class="terminal-header">
+            <div class="header-buttons">
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+            </div>
+            <div class="header-title">PASSTAX</div>
+        </header>
+
+        <main class="terminal-body">
+            <h1>Welcome to Password Manager</h1>
+            <p><span class="command">PASSTAX</span></p>
+
+            <!-- Password Manager Form -->
+            <form id="password-form">
+                <!-- Service Input -->
+                <label for="service">Service:</label>
+                <input type="text" id="service" placeholder="e.g., Email" autocomplete="off" required>
+                
+                <!-- Username Input -->
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="e.g., user123" autocomplete="off" required>
+                
+                <!-- Password Input -->
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="••••••••" autocomplete="off" required>
+                
+                <!-- Show Password (button) -->
+                <button type="button" id="toggle-password-visibility">Show Password</button>
+                
+                <!-- Password Strength Display -->
+                <div id="password-strength-container">
+                    <label for="password-strength">Password Strength:</label>
+                    <div id="password-strength">Weak</div>
+                </div>
+                
+                <!-- Generate Password Button -->
+                <button type="button" id="suggest-password">Generate Strong Password</button> 
+            </br>
+                <!-- Save Password Button -->
+                <button type="submit">Save</button>
+
+                <!-- Password History -->
+                <div id="password-history-container">
+                    <h3>Password History</h3>
+                    <ul id="password-history">
+                        <li>No passwords saved yet.</li>
+                    </ul>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

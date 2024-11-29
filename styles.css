@@ -1,0 +1,275 @@
+/* Global styles */
+body {
+    background: radial-gradient(circle, #000000 60%, #020202, #000000);
+    color: #00FF00;
+    font-family: 'Press Start 2P', monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: background-flicker 4s infinite;
+}
+
+/* Flickering background animation */
+@keyframes background-flicker {
+    0%, 100% {
+        background: radial-gradient(circle, #000000 60%, #020202, #000000);
+    }
+    50% {
+        background: radial-gradient(circle, #010101 60%, #000000, #010101);
+    }
+}
+
+/* Terminal container */
+.terminal {
+    border: 4px solid #00FF00;
+    width: 700px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px #00FF00, 0 0 10px #00FF00 inset;
+    background: #000000;
+    position: relative;
+}
+
+/* Terminal glow effect */
+.terminal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 10px rgba(0, 255, 0, 0.1);
+    pointer-events: none;
+}
+
+/* Terminal Header */
+.terminal-header {
+    background-color: #111;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #00FF00;
+    border-bottom: 2px solid #00FF00;
+}
+
+.header-buttons span {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+.header-buttons .red {
+    background-color: #FF5F57;
+}
+
+.header-buttons .yellow {
+    background-color: #FFBD2E;
+}
+
+.header-buttons .green {
+    background-color: #28C940;
+}
+
+.header-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    flex: 1;
+    margin: 0;
+}
+
+/* Pulsing button animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Terminal Body */
+.terminal-body {
+    padding: 20px;
+    line-height: 1.8;
+    text-align: center;
+    animation: terminal-glow 3s infinite alternate;
+}
+
+/* Terminal glow animation */
+@keyframes terminal-glow {
+    from {
+        text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
+    }
+    to {
+        text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
+    }
+}
+
+h1 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #00FF00;
+}
+
+.command {
+    color: #00FF00;
+    font-weight: bold;
+    animation: text-flicker 3s infinite;
+}
+
+/* Flickering text animation */
+@keyframes text-flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Form Styles */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+form input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #00FF00;
+    border-radius: 4px;
+    background-color: black;
+    color: #00FF00;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    text-align: center;
+    text-shadow: 0 0 10px #00FF00;
+    animation: glow-input 2s infinite alternate;
+}
+
+@keyframes glow-input {
+    from {
+        box-shadow: 0 0 5px #00FF00;
+    }
+    to {
+        box-shadow: 0 0 15px #00FF00;
+    }
+}
+
+form button {
+    background-color: #00FF00;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px #00FF00;
+    transition: all 0.3s;
+}
+
+form button:hover {
+    background-color: black;
+    color: #00FF00;
+    border: 2px solid #00FF00;
+    box-shadow: 0 0 40px #00FF00;
+    animation: button-hover-flicker 1s infinite;
+}
+
+@keyframes button-hover-flicker {
+    0%, 100% {
+        box-shadow: 0 0 20px #00FF00;
+    }
+    50% {
+        box-shadow: 0 0 30px #00FF00;
+    }
+}
+
+/* Quotes Section */
+#password-quotes {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #00FF00;
+    animation: text-flicker 3s infinite;
+}
+
+#password-quotes h2 {
+    font-size: 16px;
+    text-shadow: 0 0 10px #00FF00;
+}
+
+#password-quotes p {
+    font-size: 14px;
+    font-style: italic;
+    text-shadow: 0 0 5px #00FF00;
+}
+
+/* Password History */
+#password-history-container {
+    margin-top: 20px;
+    text-align: center;
+    color: #00FF00;
+}
+
+#password-history {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+}
+
+#password-history li {
+    text-shadow: 0 0 5px #00FF00;
+    margin-bottom: 5px;
+    animation: text-flicker 3s infinite;
+}
+
+/* Light Theme */
+body.light-theme {
+    background: #FFFFFF;
+    color: #000;
+}
+body.light-theme .terminal {
+    border: 4px solid #000;
+    box-shadow: 0 0 30px #000, 0 0 10px #000 inset;
+}
+
+/* Toast Messages */
+.toast {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    animation: fadeInOut 3s;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
